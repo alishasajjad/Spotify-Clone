@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlist - Spotify Clone</title>
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/playlist.css">
+  <link rel="stylesheet" href="assets/styles/songDetailPanel.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-transition">
+  <header>
+    <h1>🎵 Spotify Clone</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="library.html">Library</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="playlist-header">
+      <div class="playlist-cover">
+        <img src="assets/images/playlist1.jpg" alt="Playlist Cover">
+      </div>
+      <div class="playlist-info">
+        <span class="playlist-type">PLAYLIST</span>
+        <h1>Playlist Name</h1>
+        <p class="playlist-description">Playlist description goes here</p>
+        <div class="playlist-meta">
+          <span class="playlist-owner">Spotify</span>
+          <span class="playlist-songs-count">6 songs</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="playlist-controls">
+      <button class="play-all-btn">
+        <span class="play-icon">▶</span> Play
+      </button>
+    </section>
+
+    <section class="playlist-songs">
+      <div class="songs-header">
+        <div class="song-number">#</div>
+        <div class="song-info">TITLE</div>
+        <div class="song-duration">DURATION</div>
+      </div>
+      <div id="playlistSongs" class="songs-container"></div>
+    </section>
+  </main>
+
+  <!-- Song Detail Panel -->
+  <div id="song-detail-panel" class="song-detail-panel">
+    <div class="song-detail-overlay"></div>
+    <div class="song-detail-content">
+      <div class="song-detail-header">
+        <button class="close-panel-btn" onclick="closeSongDetailPanel()">×</button>
+      </div>
+      
+      <div class="song-detail-info">
+        <div class="song-cover-container">
+          <img id="song-detail-cover" src="" alt="Song Cover" class="song-detail-cover">
+        </div>
+        
+        <div class="song-details">
+          <h2 id="song-detail-name" class="song-detail-name"></h2>
+          <p id="song-detail-artist" class="song-detail-artist"></p>
+          <p id="song-detail-album" class="song-detail-album"></p>
+        </div>
+        
+        <div class="song-detail-actions">
+          <button class="play-btn-large" onclick="playSelectedSong()">
+            <span class="play-icon">▶</span> Play
+          </button>
+          <button class="action-btn" onclick="likeSelectedSong()">♥</button>
+          <button class="action-btn" onclick="addSelectedToPlaylist()">+</button>
+          <button class="action-btn" onclick="addSelectedArtist()" title="Add Artist to Library">👤</button>
+          <button class="action-btn" onclick="shareSelectedSong()">⋯</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/albums.js"></script>
+  <script src="scripts/artists.js"></script>
+  <script src="scripts/musicPlayer.js"></script>
+  <script src="scripts/playlist.js"></script>
+  <script src="scripts/songDetailPanel.js"></script>
+</body>
+</html>

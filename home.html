@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Spotify Clone</title>
+<link rel="apple-touch-icon" sizes="180x180" href="assets\images\spotify_logo1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets\images\spotify_logo1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets\images\spotify_logo1.png">
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/home.css">
+  <link rel="stylesheet" href="assets/styles/songDetailPanel.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="page-transition">
+  <header>
+    <h1>🎵 Spotify Clone</h1>
+    <nav>
+      <a href="home.html" class="active">Home</a>
+      <a href="browse.html">Browse</a>
+      <a href="library.html">Library</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero-section">
+      <div class="hero-content">
+        <h2 id="welcome-message">Welcome to Your Music</h2>
+        <p>Discover millions of songs, playlists, and podcasts</p>
+        <button class="cta-button" onclick="window.location.href='browse.html'">Start Listening</button>
+      </div>
+    </section>
+
+    <!-- Recently Played -->
+    <section id="recently-played" class="content-section">
+      <div class="section-header">
+        <h2>Recently Played</h2>
+        <a href="library.html" class="see-all-link">See all</a>
+      </div>
+      <div class="card-grid" id="recentlyPlayedGrid"></div>
+    </section>
+
+    <!-- Made For You -->
+    <section id="made-for-you" class="content-section">
+      <div class="section-header">
+        <h2>Made For You</h2>
+        <a href="browse.html" class="see-all-link">See all</a>
+      </div>
+      <div class="card-grid" id="madeForYouGrid"></div>
+    </section>
+
+    <!-- Featured Playlists -->
+    <section id="featured" class="content-section">
+      <div class="section-header">
+        <h2>Featured Playlists</h2>
+        <a href="browse.html" class="see-all-link">See all</a>
+      </div>
+      <div class="card-grid" id="playlistGrid"></div>
+    </section>
+
+    <!-- Popular Albums -->
+    <section id="popular-albums" class="content-section">
+      <div class="section-header">
+        <h2>Popular Albums</h2>
+        <a href="browse.html" class="see-all-link">See all</a>
+      </div>
+      <div class="card-grid" id="albumsGrid"></div>
+    </section>
+
+    <!-- Browse by Category -->
+    <section id="browse-categories" class="content-section">
+      <div class="section-header">
+        <h2>Browse by Category</h2>
+        <a href="browse.html" class="see-all-link">See all</a>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+  </main>
+ 
+  <div id="musicPlayerContainer"></div>
+
+  <!-- Song Detail Panel -->
+  <div id="song-detail-panel" class="song-detail-panel">
+    <div class="song-detail-overlay"></div>
+    <div class="song-detail-content">
+      <div class="song-detail-header">
+        <button class="close-panel-btn" onclick="closeSongDetailPanel()">×</button>
+      </div>
+      
+      <div class="song-detail-info">
+        <div class="song-cover-container">
+          <img id="song-detail-cover" src="" alt="Song Cover" class="song-detail-cover">
+        </div>
+        
+        <div class="song-details">
+          <h2 id="song-detail-name" class="song-detail-name"></h2>
+          <p id="song-detail-artist" class="song-detail-artist"></p>
+          <p id="song-detail-album" class="song-detail-album"></p>
+        </div>
+        
+        <div class="song-detail-actions">
+          <button class="play-btn-large" onclick="playSelectedSong()">
+            <span class="play-icon">▶</span> Play
+          </button>
+          <button class="action-btn" onclick="likeSelectedSong()">♥</button>
+          <button class="action-btn" onclick="addSelectedToPlaylist()">+</button>
+          <button class="action-btn" onclick="addSelectedArtist()" title="Add Artist to Library">👤</button>
+          <button class="action-btn" onclick="shareSelectedSong()">⋯</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/albums.js"></script>
+  <script src="scripts/artists.js"></script>
+  <script src="scripts/library.js"></script>
+  <script src="assets/data/songs.js"></script>
+  <script src="scripts/playlist.js"></script>
+  <script src="scripts/home.js"></script>
+  <script src="scripts/musicPlayer.js"></script>
+  <script src="scripts/songPanel.js"></script>
+  <script src="scripts/songDetailPanel.js"></script>
+</body>
+</html>

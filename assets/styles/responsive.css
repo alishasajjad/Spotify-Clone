@@ -1,0 +1,231 @@
+/* ===== Responsive Styles ===== */
+
+/* Hero section styling */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1DB954, #191414);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.hero .btn {
+  animation: fadeInUp 1.4s ease;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(29, 185, 84, 0.3) 0%, rgba(18, 18, 18, 0.9) 70%);
+  animation: pulse 15s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page transitions */
+.page-transition {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .hero h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    height: 60vh;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+  
+  #music-player-bar {
+    padding: 0 10px;
+  }
+  
+  .now-playing-title {
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    margin: 5px 10px;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  #music-player-bar {
+    height: 80px;
+  }
+  
+  .now-playing-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .progress-time {
+    display: none;
+  }
+  
+  .volume-container {
+    width: 20%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 50vh;
+  }
+  
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+  
+  #music-player-bar {
+    padding: 0 5px;
+  }
+  
+  .now-playing {
+    width: 40%;
+  }
+  
+  .player-controls {
+    width: 60%;
+  }
+  
+  .volume-container {
+    display: none;
+  }
+  
+  .now-playing-artist {
+    display: none;
+  }
+}
+
+/* Card grid layouts */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+  }
+}@media (max-width: 768px) {
+  header {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .playlist-grid,
+  #libraryContainer,
+  #searchResults {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  #searchInput {
+    width: 80%;
+  }
+
+  .profile-info {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  header {
+    text-align: center;
+  }
+}

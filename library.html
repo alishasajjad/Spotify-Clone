@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Library - Spotify Clone</title>
+
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/library.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets\images\spotify_logo1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets\images\spotify_logo1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets\images\spotify_logo1.png">
+<link rel="manifest" href="assets\images\spotify_logo1.jpg">
+</head>
+<body class="page-transition">
+  <header>
+    <div class="logo">
+      <img src="assets/images/spotify_logo1.png" alt="Spotify Logo">
+    </div>
+    <nav>
+      <a href="home.html"><i class="fas fa-home"></i> Home</a>
+      <a href="browse.html"><i class="fas fa-search"></i> Browse</a>
+      <a href="library.html" class="active"><i class="fas fa-book"></i> Library</a>
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="library-header">
+      <h1>Your Library</h1>
+      <div class="library-filters">
+        <button class="filter-btn active">Playlists</button>
+        <button class="filter-btn" onclick="window.location.href='albums.html'">Albums</button>
+        <button class="filter-btn" onclick="window.location.href='artists.html'">Artists</button>
+      </div>
+    </section>
+
+    <!-- Liked Songs Section -->
+    <section class="liked-songs-section">
+      <div class="liked-songs-card">
+        <div class="liked-songs-header">
+          <h2>Liked Songs</h2>
+          <span class="liked-songs-count" id="likedSongsCount">0 songs</span>
+        </div>
+        <div id="likedSongsContainer" class="liked-songs-list">
+          <!-- Liked songs will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="library-content">
+      <div id="libraryContainer" class="card-grid">
+        <!-- Library content will be loaded here by library.js -->
+      </div>
+    </section>
+  </main>
+
+  <div id="musicPlayerContainer"></div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/library.js"></script>
+  <script src="scripts/musicPlayer.js"></script>
+</body>
+</html>

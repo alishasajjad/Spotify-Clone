@@ -1,0 +1,154 @@
+/* ===== Login Page Styles (Updated) ===== */
+@import url('style.css');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1db954, #121212);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Login Box ===== */
+.login-container {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px); /* glass effect */
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.5s ease;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+h2 {
+  color: #1db954;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.4);
+}
+
+/* ===== Button ===== */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #1db954;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+}
+
+button:hover {
+  background: #1ed760;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.6);
+}
+
+/* Checkbox + Label */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input[type="checkbox"] {
+  accent-color: #1db954;
+  width: 18px;
+  height: 18px;
+}
+
+/* Links & Errors */
+p {
+  text-align: center;
+  margin-top: 20px;
+  color: #ccc;
+}
+
+a {
+  color: #1db954;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #1ed760;
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #ff5252;
+  font-size: 14px;
+  margin-top: 5px;
+  min-height: 20px;
+}
+
+/* ===== Responsive Fix ===== */
+@media (min-width: 1024px) {
+  .login-container {
+    max-width: 470px;              /* wider box on desktop */
+    padding: 50px 60px;
+    backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.65);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.7);
+  }
+
+  h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+}
+
+/* ===== Small Screen Adjustments ===== */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+}
+
+/* ===== Fade Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

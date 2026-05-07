@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Saved Albums - Spotify Clone</title>
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/library.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body class="page-transition">
+  <header>
+    <div class="logo">
+      <img src="assets/images/spotify_logo1.png" alt="Spotify Logo">
+    </div>
+    <nav>
+      <a href="home.html"><i class="fas fa-home"></i> Home</a>
+      <a href="browse.html"><i class="fas fa-search"></i> Browse</a>
+      <a href="library.html" class="active"><i class="fas fa-book"></i> Library</a>
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="library-header">
+      <h1>Your Library</h1>
+      <div class="library-filters">
+        <button class="filter-btn" onclick="window.location.href='library.html'">Playlists</button>
+        <button class="filter-btn active">Albums</button>
+        <button class="filter-btn" onclick="window.location.href='artists.html'">Artists</button>
+      </div>
+    </section>
+
+    <section class="library-content">
+      <h2 class="section-header">Your Saved Albums</h2>
+      <div id="albumsContainer" class="card-grid">
+        <!-- Saved albums will be loaded here -->
+      </div>
+    </section>
+  </main>
+
+  <div id="musicPlayerContainer"></div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/albums.js"></script>
+  <script src="scripts/musicPlayer.js"></script>
+</body>
+</html>
+

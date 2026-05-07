@@ -1,0 +1,28 @@
+Built a Spotify-inspired music web app from scratch using vanilla JavaScript, and this project pushed my frontend engineering skills much further than I expected.
+
+I wanted to recreate the feel of a modern streaming platform while keeping the codebase framework-free and modular. The result is a multi-page experience with real playback controls, dynamic search, and persistent user data in the browser.
+
+What this project includes:
+- Complete onboarding and authentication flow (signup/login with validation, remember-me, and profile editing)
+- Home dashboard with personalized welcome state and dynamic sections like Recently Played and recommendations
+- Interactive Browse/Search page with genre-based filtering and live result rendering
+- Fully custom music player bar built with the HTML5 Audio API (play/pause, next/previous, seek, volume, mute, progress sync)
+- Playlist and song detail interactions with quick actions (play, like, add to library)
+- Library system powered by localStorage (liked songs, saved albums, followed artists, recently played)
+- Responsive UI and reusable styling architecture across pages
+
+Tech used:
+- HTML5
+- CSS3 (modular page styles + responsive design)
+- JavaScript (ES6, DOM APIs, localStorage, Audio API)
+- Font Awesome + Google Fonts
+
+What I learned during development:
+- How to design reusable UI behaviors in plain JavaScript without relying on frameworks
+- Better state handling patterns for multi-page apps using localStorage
+- The importance of separating concerns across scripts for maintainability
+- Practical UX details for media apps: transitions, hover states, feedback loops, and player consistency
+
+I’m continuing to refine this with cleaner architecture and backend integration next. If you build music products, frontend systems, or interactive web apps, I’d love to connect and exchange ideas.
+
+#JavaScript #FrontendDevelopment #WebDevelopment #HTML #CSS #UIUX #AudioAPI #LocalStorage #PortfolioProject #SoftwareEngineering

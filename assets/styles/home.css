@@ -1,0 +1,382 @@
+/* ===== Home Page Styles ===== */
+@import url('style.css');
+
+/* ===== Page Background ===== */
+body {
+  background: radial-gradient(circle at top, #0a0a0a, #000, #043a1b);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Main Section ===== */
+main {
+  padding: 0;
+}
+
+/* ===== Content Sections ===== */
+.content-section {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeInSection 0.8s ease-out;
+}
+
+.content-section:not(:first-child) {
+  padding-top: 20px;
+}
+
+/* ===== Section Headers ===== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 15px;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.section-header h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: var(--spotify-green);
+  border-radius: 2px;
+}
+
+.see-all-link {
+  color: var(--spotify-text-gray);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.see-all-link:hover {
+  color: var(--spotify-green);
+}
+
+/* ===== Hero Section ===== */
+#hero-section {
+  background: linear-gradient(135deg, #1db954 0%, #191414 100%);
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  animation: slideInUp 0.8s ease-out;
+}
+
+.hero-content p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  animation: slideInUp 0.8s ease-out 0.2s both;
+}
+
+.cta-button {
+  background: var(--spotify-white);
+  color: var(--spotify-black);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.8s ease-out 0.4s both;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background: var(--spotify-green);
+  color: var(--spotify-white);
+}
+
+/* ===== Featured Section ===== */
+#featured {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  animation: fadeInSection 0.8s ease-out;
+}
+
+#featured h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 10px;
+  letter-spacing: 0.5px;
+}
+
+#featured h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: var(--spotify-green);
+  border-radius: 2px;
+}
+
+/* ===== Playlist Grid ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* ===== Category Grid ===== */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* ===== Music Cards ===== */
+.music-card {
+  background: rgba(24, 24, 24, 0.9);
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.music-card:hover {
+  transform: translateY(-6px);
+  background: rgba(40, 40, 40, 0.95);
+  box-shadow: 0 6px 25px rgba(29, 185, 84, 0.25);
+}
+
+/* ===== Playlist Cards ===== */
+.playlist-card {
+  background: rgba(24, 24, 24, 0.9);
+  border-radius: 12px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.playlist-card:hover {
+  transform: translateY(-6px);
+  background: rgba(40, 40, 40, 0.95);
+  box-shadow: 0 6px 25px rgba(29, 185, 84, 0.25);
+}
+
+/* ===== Album Art ===== */
+.album-art {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.album-art img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.album-art:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Play Button Overlay ===== */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.album-art:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-overlay .play-btn-large {
+  pointer-events: all;
+}
+
+.play-btn-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--spotify-green);
+  border: none;
+  color: var(--spotify-white);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(29, 185, 84, 0.5);
+  z-index: 3;
+}
+
+.play-btn-large .play-icon {
+  display: inline-block;
+  margin-left: 2px;
+}
+
+.play-btn-large:hover {
+  transform: scale(1);
+  background: var(--spotify-green-hover);
+}
+
+/* ===== Category Cards ===== */
+.category-card {
+  border-radius: 12px;
+  padding: 20px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.category-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.category-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  transform: rotate(25deg);
+  opacity: 0.8;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== Playlist Card Text ===== */
+.playlist-card h3,
+.music-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.playlist-card p,
+.music-card p {
+  font-size: 14px;
+  color: var(--spotify-text-gray);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== New Animations ===== */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Fade Animations ===== */
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-grid .card,
+.card-grid .music-card,
+.category-grid .category-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInCard 0.6s ease forwards;
+}
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  #featured h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .card-grid {
+    gap: 15px;
+  }
+
+  .playlist-card {
+    padding: 12px;
+  }
+}
+

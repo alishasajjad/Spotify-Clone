@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone</title>
+<link rel="apple-touch-icon" sizes="180x180" href="assets\images\spotify_logo1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets\images\spotify_logo1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets\images\spotify_logo1.png">
+<link rel="manifest" href="assets\images\spotify_logo1.jpg">
+
+  <style>
+    :root {
+      --spotify-green: #1DB954;
+      --spotify-green-hover: #1ED760;
+      --spotify-black: #121212;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--spotify-black);
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, var(--spotify-black), #191414, #1DB954, #191414);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite, fadeIn 1.5s ease-in;
+      z-index: -1;
+    }
+    
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: contentFadeIn 1s ease-in 0.5s both;
+      transition: opacity 0.5s ease;
+    }
+    
+    @keyframes contentFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .logo {
+      width: 180px;
+      margin-bottom: 40px;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 50px;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--spotify-green);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(29, 185, 84, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+      }
+    }
+    
+    .btn:hover {
+      background: var(--spotify-green-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(29, 185, 84, 0.9);
+    }
+    
+    .fade-out {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      p {
+        font-size: 1rem;
+        padding: 0 20px;
+      }
+      
+      .logo {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  
+  <div class="container" id="mainContainer">
+    <img src="assets\images\spotify_logo1.png" alt="Spotify Logo" class="logo">
+    <h1>Welcome to Spotify Clone</h1>
+    <p>Stream your favorite music, discover new tracks, and create your perfect playlists. Your music journey starts here.</p>
+    <a href="#" id="getStartedBtn" class="btn">Get Started</a>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check if user is already logged in
+      const currentUser = localStorage.getItem('currentUser');
+      if (currentUser) {
+        // Redirect to home if already logged in
+        window.location.href = 'get_started.html';
+      }
+      
+      // Handle Get Started button click with smooth transition
+      const getStartedBtn = document.getElementById('getStartedBtn');
+      const mainContainer = document.getElementById('mainContainer');
+      
+      getStartedBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        // Add fade-out animation
+        mainContainer.classList.add('fade-out');
+        
+        // Redirect after animation completes
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

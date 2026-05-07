@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search - Spotify Clone</title>
+  <link rel="stylesheet" href="assets/styles/style.css">
+  <link rel="stylesheet" href="assets/styles/browse.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="assets/images/spotify_logo1.png" type="image/png">
+</head>
+<body class="page-transition">
+  <header>
+    <div class="logo">
+      <img src="assets/images/spotify_logo1.png" alt="Spotify Logo">
+    </div>
+    <nav>
+      <a href="home.html"><i class="fas fa-home"></i> Home</a>
+      <a href="browse.html" class="active"><i class="fas fa-search"></i> Search</a>
+      <a href="library.html"><i class="fas fa-book"></i> Your Library</a>
+      <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
+    </nav>
+  </header>
+
+  <main class="browse-main">
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="What do you want to listen to?" autocomplete="off">
+          <button class="clear-search" id="clearSearch" style="display: none;">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Browse Content -->
+    <div id="browseContent" class="browse-content">
+      <!-- Top Genres Section -->
+      <section class="browse-section">
+        <h2 class="section-title">Browse all</h2>
+        <div class="genre-grid" id="genreGrid">
+          <!-- Genres will be loaded here -->
+        </div>
+      </section>
+
+      <!-- Trending Songs Section -->
+      <section class="browse-section">
+        <h2 class="section-title">Trending Songs</h2>
+        <div class="songs-grid" id="trendingSongsGrid">
+          <!-- Trending songs will be loaded here -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Search Results -->
+    <div id="searchResults" class="search-results" style="display: none;">
+      <div class="results-container">
+        <h2 class="results-title">Search results</h2>
+        <div id="resultsContent" class="results-content">
+          <!-- Search results will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="musicPlayerContainer"></div>
+
+  <script src="scripts/app.js"></script>
+  <script src="scripts/albums.js"></script>
+  <script src="scripts/artists.js"></script>
+  <script src="scripts/library.js"></script>
+  <script src="assets/data/songs.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/musicPlayer.js"></script>
+</body>
+</html>

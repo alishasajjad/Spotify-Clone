@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify Clone</title>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --spotify-green: #1DB954;
+      --spotify-black: #121212;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--spotify-black);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+    
+    .loader-container {
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .loader-text {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--spotify-green);
+    }
+    
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      border-top-color: var(--spotify-green);
+      margin: 0 auto;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader-text">Loading Spotify Clone...</div>
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    // Redirect after 1 second with fade effect
+    setTimeout(() => {
+      document.querySelector('.loader-container').style.opacity = 0;
+      setTimeout(() => {
+        window.location.href = "get_started.html";
+      }, 300);
+    }, 1000);
+  </script>
+</body>
+</html>

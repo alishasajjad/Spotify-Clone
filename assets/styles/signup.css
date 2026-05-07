@@ -1,0 +1,131 @@
+/* ===== Signup Page Styles (Updated) ===== */
+@import url('style.css');
+@import url('login.css');
+
+/* Background setup */
+body {
+  background: linear-gradient(135deg, #121212, #1db954);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Signup Container ===== */
+.signup-container {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.5s ease;
+  transition: all 0.3s ease;
+}
+
+.signup-container h2 {
+  color: #1db954;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.4);
+}
+
+/* ===== Button ===== */
+button {
+  background: #1db954;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1ed760;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.6);
+}
+
+/* Password requirements */
+.password-requirements {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 8px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* ===== Responsive (Desktop wider, Mobile same) ===== */
+@media (min-width: 1024px) {
+  .signup-container {
+    max-width: 470px;              /* Wider on large screens */
+    padding: 50px 60px;
+    backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.65);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.7);
+  }
+
+  .signup-container h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  input {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 16px;
+  }
+}
+
+/* ===== Small Screens ===== */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+}
+
+/* ===== Fade Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Adjust vertical alignment for desktop */
+@media (min-width: 1024px) {
+  body {
+    align-items: flex-start;    /* move content downward */
+    padding-top: 40px;          /* distance from top */
+  }
+
+  .signup-container {
+    margin-top: 10px;           /* small extra offset */
+  }
+}
